@@ -1,4 +1,10 @@
-function Main() : JSX.Element {
+type MainProps = {
+    name: string
+    genre: string
+    releaseDate: string
+}
+
+function Main(filmInfo : MainProps) : JSX.Element {
   return (
     <div>
       <div>
@@ -73,10 +79,10 @@ function Main() : JSX.Element {
               <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width={218} height={327} />
             </div>
             <div className="film-card__desc">
-              <h2 className="film-card__title">The Grand Budapest Hotel</h2>
+              <h2 className="film-card__title">{filmInfo.name}</h2>
               <p className="film-card__meta">
-                <span className="film-card__genre">Drama</span>
-                <span className="film-card__year">2014</span>
+                <span className="film-card__genre">{filmInfo.genre}</span>
+                <span className="film-card__year">{filmInfo.releaseDate}</span>
               </p>
               <div className="film-card__buttons">
                 <button className="btn btn--play film-card__button" type="button">
