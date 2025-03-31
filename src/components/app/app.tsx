@@ -22,9 +22,9 @@ function App(filmInfo: AppProps): JSX.Element {
         <Route path={AppRotes.Login} element={<SignIn/>}></Route>
 
         <Route path={AppRotes.MyList} element={<PrivateRoute authorizationStatus={AuthorizationStatus.Auth}><MyList/></PrivateRoute>}></Route>
-        <Route path={`${AppRotes.Films}:id`} element={<MoviePage/>}></Route>
-        <Route path={`${AppRotes.Films}:id${AppRotes.Review}`} element={<AddReview/>}></Route>
-        <Route path={`${AppRotes.Player}:id`} element={<Player/>}></Route>
+        <Route path={`${AppRotes.Films}/:id`} element={<MoviePage/>}></Route>
+        <Route path={`${AppRotes.Films}/:id${AppRotes.Review}`} element={<AddReview/>}></Route>
+        <Route path={`${AppRotes.Player}/:id`} element={<Player/>}></Route>
         <Route path={'*'} element={<Page404/>}></Route>
       </Routes>
     </BrowserRouter>
